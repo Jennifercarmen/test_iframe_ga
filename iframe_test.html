@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5LBG01XBD"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  try {
+  var postObject = {
+    event:  'page_view_virtual',
 
-  gtag('config', 'G-B5LBG01XBD');
+  };
 
-  gtag("event", "page_view", {
-  send_to: "G-B5LBG01XBD",
-  page_location: "http://localhost/proyect_gtag/welcome",
-  page_title: "welcome"
-})
+  parent.postMessage(postObject, 'http://localhost/proyect_gtag/');
+} catch (e) {
+  window.console && window.console.log(e);
+}
 
-window.parent.postMessage(postObject, 'http://localhost/proyect_gtag/'); // Wildcard origin for demonstration
 
 </script>
     <meta charset="UTF-8">
